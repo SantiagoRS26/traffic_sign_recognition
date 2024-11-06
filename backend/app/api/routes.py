@@ -25,7 +25,11 @@ async def train_model(background_tasks: BackgroundTasks):
 async def get_metrics():
     if not training_pipeline.evaluation_results:
         raise HTTPException(status_code=400, detail="El modelo no ha sido entrenado aún.")
-    return training_pipeline.evaluation_results
+    response = {
+        'evaluation_results': training_pipeline.evaluation_results,
+        'cross_validation_results': training_pipeline.cross_validation_results
+    }
+    return response
 
 @router.get("/examples/correct")
 async def get_correct_examples():

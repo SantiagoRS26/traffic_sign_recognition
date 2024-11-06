@@ -30,6 +30,7 @@ data/
 
 # Model and training files
 trained_model.h5
+cross_validation_results.json
 examples/
 *.h5
 *.keras

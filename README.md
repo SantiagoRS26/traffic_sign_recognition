@@ -1,182 +1,105 @@
-# Reconocimiento de Señales de Tráfico
+# Proyecto de Reconocimiento de Señales de Tráfico
 
-Este proyecto implementa una API para el reconocimiento de señales de tráfico utilizando una red neuronal convolucional (CNN). La aplicación permite entrenar un modelo de reconocimiento de señales de tráfico con un conjunto de datos predefinido y ofrece endpoints para realizar predicciones sobre imágenes cargadas.
+Este repositorio contiene la implementación completa de una aplicación para el reconocimiento de señales de tráfico, organizada en dos subproyectos: **backend** y **frontend**. El backend proporciona una API para la carga, entrenamiento, evaluación y predicción de señales de tráfico mediante redes neuronales, mientras que el frontend ofrece una interfaz visual para interactuar con esta API.
 
-## **Contenido**
+## Tabla de Contenidos
 
-- [Requisitos](#requisitos)
 - [Estructura del Proyecto](#estructura-del-proyecto)
-- [Conjunto de Datos](#conjunto-de-datos)
-- [Configuración](#configuración)
-- [Iniciar la Aplicación](#iniciar-la-aplicación)
-- [Uso de la API](#uso-de-la-api)
-- [Endpoints Disponibles](#endpoints-disponibles)
+- [Configuración General](#configuración-general)
+- [Iniciar la Aplicación Completa](#iniciar-la-aplicación-completa)
+- [Verificación de Servicios](#verificación-de-servicios)
+- [Detalles del Proyecto](#detalles-del-proyecto)
+- [Contribuciones](#contribuciones)
+- [Licencia](#licencia)
 
 ---
 
-## **Requisitos**
+## Estructura del Proyecto
 
-- Python 3.8 o superior
-- [TensorFlow](https://www.tensorflow.org/)
-- [FastAPI](https://fastapi.tiangolo.com/)
-- [Uvicorn](https://www.uvicorn.org/)
-
-## **Estructura del Proyecto**
+La estructura de este repositorio está organizada en dos directorios principales, cada uno con sus propios archivos de configuración y dependencias:
 
 ```
 traffic_sign_recognition/
-├── app/
-│   ├── main.py                # Archivo principal para iniciar la aplicación
-│   ├── api/
-│   │   └── routes.py          # Definición de endpoints de la API
-│   ├── models/
-│   │   └── cnn_models.py      # Definición de arquitecturas CNN
-│   ├── utils/
-│   │   ├── data_pipeline.py   # Manejo de datos y preprocesamiento
-│   │   ├── model_trainer.py   # Entrenamiento y validación del modelo
-│   │   ├── model_evaluator.py # Evaluación del modelo
-│   │   └── training_pipeline.py # Orquestador de entrenamiento y evaluación
-├── data/
-│   ├── crop_dataset/          # Carpeta con datos de entrenamiento
-│   └── test_data/             # Carpeta con datos de prueba
-├── test_labels.csv            # Archivo de etiquetas para los datos de prueba
-├── requirements.txt           # Dependencias del proyecto
+├── backend/                   # Código del backend con FastAPI y TensorFlow
+│   ├── app/                   # Aplicación backend
+│   ├── data/                  # Carpeta para datos de entrenamiento y prueba
+│   ├── requirements.txt       # Dependencias del backend
+│   └── README.md              # Instrucciones específicas del backend
+├── frontend/                  # Código del frontend con Next.js y Tailwind CSS
+│   ├── app/                   # Componentes y páginas de Next.js
+│   ├── public/                # Archivos públicos
+│   ├── tailwind.config.js     # Configuración de Tailwind CSS
+│   ├── tsconfig.json          # Configuración de TypeScript
+│   └── README.md              # Instrucciones específicas del frontend
+├── .gitignore                 # Configuración global para ignorar archivos
 └── README.md                  # Este archivo
 ```
 
-## **Conjunto de Datos**
+## Configuración General
 
-Para entrenar el modelo, este proyecto utiliza un conjunto de datos de señales de tráfico recortadas. Puedes descargar el conjunto de datos desde Kaggle en el siguiente enlace:
+Cada subproyecto (backend y frontend) tiene su propio entorno de desarrollo, y es necesario configurarlos por separado. A continuación, se indican los pasos para preparar el entorno en cada carpeta.
 
-**[Conjunto de Datos en Kaggle](https://www.kaggle.com/datasets/shanmukh05/traffic-sign-cropped)**
-
-1. Descarga el conjunto de datos desde Kaggle.
-2. Extrae el contenido descargado en la carpeta `data/` del proyecto, de modo que las subcarpetas `crop_dataset/` y `test_data/` se ubiquen en `data/`.
-
-## **Configuración**
-
-1. **Clonar el repositorio**:
+1. **Clonar el Repositorio**:
    ```bash
    git clone https://github.com/SantiagoRS26/traffic_sign_recognition.git
    cd traffic_sign_recognition
    ```
 
-### **Crear y activar un entorno virtual**
+2. **Configuración del Backend**:
+   - Navega a la carpeta `backend` e instala las dependencias necesarias.
+   - Los detalles específicos están disponibles en el archivo [`backend/README.md`](backend/README.md).
 
-1. **Crear el entorno virtual:**
+3. **Configuración del Frontend**:
+   - Navega a la carpeta `frontend` y sigue las instrucciones para instalar las dependencias de Node.js y configurar el entorno.
+   - Consulta el archivo [`frontend/README.md`](frontend/README.md) para detalles adicionales.
 
+## Iniciar la Aplicación Completa
+
+Para ejecutar el proyecto completo en desarrollo, es necesario iniciar tanto el backend como el frontend en terminales separadas.
+
+1. **Iniciar el Backend**:
+   - En una terminal, navega a `backend/` y ejecuta:
    ```bash
-   python -m venv env
+   uvicorn app.main:app --reload
    ```
+   - Esto iniciará el servidor de FastAPI en `http://localhost:8000`.
 
-2. **Activar el entorno virtual:**
-
-   - En **Linux o Mac**:
-     ```bash
-     source env/bin/activate
-     ```
-
-   - En **Windows (CMD)**:
-     ```bash
-     .\env\Scripts\activate
-     ```
-
-   - En **Windows (PowerShell)**:
-     ```bash
-     .\env\Scripts\Activate.ps1
-     ```
-
-   - En **Windows (Git Bash)**:
-     ```bash
-     source env/Scripts/activate
-     ```
-
-3. **Instalar las dependencias**:
+2. **Iniciar el Frontend**:
+   - En otra terminal, navega a `frontend/` y ejecuta:
    ```bash
-   pip install -r requirements.txt
+   npm run dev
    ```
+   - Esto iniciará la aplicación de Next.js en `http://localhost:3000`.
 
-## **Iniciar la Aplicación**
+Con ambos servicios en funcionamiento, puedes acceder al frontend en `http://localhost:3000` y la interfaz interactuará automáticamente con el backend para realizar operaciones de entrenamiento, evaluación y predicción.
 
-Para iniciar la aplicación, usa el siguiente comando en la raíz del proyecto:
+## Verificación de Servicios
 
-```bash
-uvicorn app.main:app --reload
-```
+### Backend
 
-La aplicación estará disponible en `http://127.0.0.1:8000`.
+Puedes verificar que el backend está en funcionamiento accediendo a `http://localhost:8000/docs`. Esto abrirá la documentación generada automáticamente de la API con todos los endpoints disponibles.
 
-> **Nota**: La primera vez que se inicia la aplicación, es posible que sea necesario entrenar el modelo si no se encuentra el archivo `trained_model.h5`.
+### Frontend
 
-## **Uso de la API**
+El frontend debe estar disponible en `http://localhost:3000`, donde podrás interactuar con el modelo de reconocimiento de señales de tráfico a través de una interfaz de usuario.
 
-La API proporciona varios endpoints para interactuar con el modelo. Aquí se describen los endpoints principales:
+## Detalles del Proyecto
 
-### **Entrenar el Modelo**
+- **Backend**: Proporciona los endpoints necesarios para entrenar el modelo de reconocimiento de señales de tráfico, ver métricas de rendimiento y realizar predicciones sobre imágenes.
+- **Frontend**: Una interfaz de usuario que consume los endpoints del backend, mostrando métricas de validación, permitiendo la carga de imágenes para predicciones y visualizando ejemplos de clasificaciones correctas e incorrectas.
 
-- **Endpoint:** `POST /train`
-- **Descripción:** Inicia el entrenamiento del modelo en segundo plano.
-- **Ejemplo de uso (cURL):**
-  ```bash
-  curl -X POST http://127.0.0.1:8000/train
-  ```
+## Contribuciones
 
-### **Obtener Métricas de Evaluación**
+Las contribuciones a este proyecto son bienvenidas. Si deseas contribuir:
 
-- **Endpoint:** `GET /metrics`
-- **Descripción:** Devuelve las métricas de evaluación del modelo entrenado, como precisión, recall y matriz de confusión.
-- **Ejemplo de uso (cURL):**
-  ```bash
-  curl http://127.0.0.1:8000/metrics
-  ```
+1. Realiza un fork de este repositorio.
+2. Crea una nueva rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
+3. Haz commit de tus cambios (`git commit -am 'Añadir nueva funcionalidad'`).
+4. Realiza un push a tu rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un pull request en este repositorio.
 
-### **Ejemplos de Clasificaciones Correctas e Incorrectas**
+Para más detalles sobre la configuración específica del backend o frontend, consulta los archivos `README.md` en sus respectivos directorios.
 
-- **Endpoint para ejemplos correctos:** `GET /examples/correct`
-- **Endpoint para ejemplos incorrectos:** `GET /examples/incorrect`
-- **Descripción:** Devuelve una imagen con ejemplos correctamente o incorrectamente clasificados por el modelo.
-- **Ejemplo de uso (cURL):**
-  ```bash
-  curl http://127.0.0.1:8000/examples/correct
-  ```
-
-### **Realizar una Predicción**
-
-- **Endpoint:** `POST /predict`
-- **Descripción:** Permite cargar una imagen de señal de tráfico y devuelve la predicción del modelo.
-- **Parámetros:** Se debe cargar la imagen como un archivo.
-- **Ejemplo de uso (cURL):**
-  ```bash
-  curl -X POST -F "file=@ruta_de_la_imagen.jpg" http://127.0.0.1:8000/predict
-  ```
-
----
-
-## **Endpoints Disponibles**
-
-| Método | Ruta               | Descripción                                           |
-|--------|---------------------|-------------------------------------------------------|
-| POST   | `/train`           | Inicia el entrenamiento del modelo                    |
-| GET    | `/metrics`         | Devuelve las métricas de evaluación del modelo        |
-| GET    | `/examples/correct`| Devuelve una imagen de ejemplos correctamente clasificados |
-| GET    | `/examples/incorrect` | Devuelve una imagen de ejemplos incorrectamente clasificados |
-| POST   | `/predict`         | Realiza una predicción de clase para una imagen cargada|
-
----
-
-## **Notas Adicionales**
-
-- **Persistencia del Modelo:** El modelo se guarda como `trained_model.h5` después del entrenamiento. Si este archivo está presente, la aplicación lo cargará automáticamente al iniciar, evitando la necesidad de volver a entrenarlo.
-- **Manejo de Datos:** La carpeta `data/` debe contener las subcarpetas `crop_dataset/` y `test_data/` con los datos de entrenamiento y prueba, respectivamente.
-- **Control de Entrenamiento Concurrente:** El endpoint `/train` no permite múltiples solicitudes de entrenamiento al mismo tiempo. Solo se puede entrenar un modelo a la vez.
-- **Reentrenamiento:** Si deseas reentrenar el modelo, elimina el archivo `trained_model.h5` o llama al endpoint `/train`.
-
----
-
-## **Contribuciones**
-
-Si deseas contribuir al proyecto, por favor, abre un issue o envía un pull request. Cualquier mejora o sugerencia es bienvenida.
-
-## **Licencia**
+## Licencia
 
 Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).

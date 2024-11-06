@@ -1,10 +1,11 @@
 from app.utils.data_pipeline import DataPipeline
 from app.utils.model_trainer import ModelTrainer
-from app.models.cnn_models import create_cnn_model_2
+from app.models.cnn_models import create_cnn_model_1, create_cnn_model_2  # Asegúrate de importar ambas arquitecturas
 from app.utils.model_evaluator import ModelEvaluator
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import json
 from tensorflow.keras.models import load_model
 
 class TrainingPipeline:
@@ -12,6 +13,7 @@ class TrainingPipeline:
         self.is_training = False
         self.model = None
         self.evaluation_results = None
+        self.cross_validation_results = None  # Inicializar aquí
         self.correct_examples_path = None
         self.incorrect_examples_path = None
 
@@ -22,6 +24,12 @@ class TrainingPipeline:
         if os.path.exists('trained_model.h5'):
             self.model = load_model('trained_model.h5')
             print("Modelo cargado desde 'trained_model.h5'")
+            # Intentar cargar los resultados de validación cruzada
+            if os.path.exists('cross_validation_results.json'):
+                with open('cross_validation_results.json', 'r') as f:
+                    self.cross_validation_results = json.load(f)
+            else:
+                self.cross_validation_results = None
             # Cargar datos necesarios para evaluaciones y predicciones
             self.load_data()
             # Evaluar el modelo para obtener métricas iniciales
@@ -64,8 +72,43 @@ class TrainingPipeline:
             if not hasattr(self, 'X_train'):
                 self.load_data()
 
-            # Entrenar el modelo con el conjunto completo de entrenamiento
-            self.model = create_cnn_model_2(input_shape=self.X_train.shape[1:], num_classes=self.data_pipeline.preprocessor.num_classes)
+            # Entrenar y evaluar los modelos con validación cruzada
+            model_trainer = ModelTrainer(self.X_train, self.y_train_encoded, num_classes=self.data_pipeline.preprocessor.num_classes, n_splits=2)
+
+            # CNN Modelo 1
+            avg_accuracy_1, std_accuracy_1 = model_trainer.train_and_evaluate(create_cnn_model_1, "CNN Modelo 1")
+
+            # CNN Modelo 2
+            avg_accuracy_2, std_accuracy_2 = model_trainer.train_and_evaluate(create_cnn_model_2, "CNN Modelo 2")
+
+            # Almacenar los resultados de validación cruzada
+            self.cross_validation_results = [
+                {
+                    'model': 'CNN Modelo 1',
+                    'average_accuracy': avg_accuracy_1,
+                    'std_accuracy': std_accuracy_1,
+                },
+                {
+                    'model': 'CNN Modelo 2',
+                    'average_accuracy': avg_accuracy_2,
+                    'std_accuracy': std_accuracy_2,
+                }
+            ]
+
+            # Guardar los resultados de validación cruzada en un archivo JSON
+            with open('cross_validation_results.json', 'w') as f:
+                json.dump(self.cross_validation_results, f)
+
+            # Seleccionar el mejor modelo
+            if avg_accuracy_2 > avg_accuracy_1:
+                best_model_creator = create_cnn_model_2
+                best_model_name = "CNN Modelo 2"
+            else:
+                best_model_creator = create_cnn_model_1
+                best_model_name = "CNN Modelo 1"
+
+            # Entrenar el modelo seleccionado con el conjunto completo
+            self.model = best_model_creator(input_shape=self.X_train.shape[1:], num_classes=self.data_pipeline.preprocessor.num_classes)
             self.model.fit(self.X_train, self.y_train_encoded,
                            epochs=10,
                            batch_size=64,
