@@ -57,7 +57,7 @@ Para entrenar el modelo, este proyecto utiliza un conjunto de datos de señales 
 
 1. **Clonar el repositorio**:
    ```bash
-   git clone https://github.com/tu_usuario/traffic_sign_recognition.git
+   git clone https://github.com/SantiagoRS26/traffic_sign_recognition.git
    cd traffic_sign_recognition
    ```
 
