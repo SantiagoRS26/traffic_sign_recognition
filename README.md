@@ -6,6 +6,7 @@ Este proyecto implementa una API para el reconocimiento de señales de tráfico 
 
 - [Requisitos](#requisitos)
 - [Estructura del Proyecto](#estructura-del-proyecto)
+- [Conjunto de Datos](#conjunto-de-datos)
 - [Configuración](#configuración)
 - [Iniciar la Aplicación](#iniciar-la-aplicación)
 - [Uso de la API](#uso-de-la-api)
@@ -43,6 +44,15 @@ traffic_sign_recognition/
 └── README.md                  # Este archivo
 ```
 
+## **Conjunto de Datos**
+
+Para entrenar el modelo, este proyecto utiliza un conjunto de datos de señales de tráfico recortadas. Puedes descargar el conjunto de datos desde Kaggle en el siguiente enlace:
+
+**[Conjunto de Datos en Kaggle](https://www.kaggle.com/datasets/shanmukh05/traffic-sign-cropped)**
+
+1. Descarga el conjunto de datos desde Kaggle.
+2. Extrae el contenido descargado en la carpeta `data/` del proyecto, de modo que las subcarpetas `crop_dataset/` y `test_data/` se ubiquen en `data/`.
+
 ## **Configuración**
 
 1. **Clonar el repositorio**:
@@ -50,10 +60,6 @@ traffic_sign_recognition/
    git clone https://github.com/tu_usuario/traffic_sign_recognition.git
    cd traffic_sign_recognition
    ```
-
-Para Git Bash en Windows, puedes usar los mismos comandos de Linux/Mac para crear y activar el entorno virtual. Actualizo esa sección para incluir los comandos específicos para Git Bash.
-
----
 
 ### **Crear y activar un entorno virtual**
 
