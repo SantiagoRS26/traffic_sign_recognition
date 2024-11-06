@@ -1,0 +1,93 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+*.cache
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# VS Code settings
+.vscode/
+
+# Log files
+*.log
+
+# Data folders and files
+data/
+*.csv
+
+# Model and training files
+trained_model.h5
+examples/
+*.h5
+*.keras
+
+# Matplotlib saved figures
+*.png
+*.jpg
+*.jpeg
+
+# FastAPI & Uvicorn
+*.db
+*.sqlite3
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Pytest
+.pytest_cache/
+test-reports/
+
+# Coverage
+coverage.xml
+*.cover
+*.coverage
+.coverage.*
+.cache
+
+# Unit test / Coverage reports
+htmlcov/
+.tox/
+.nox/
+*.egg
+*.egg-info/
+dist/
+build/
+installer/
+__pycache__/
+
+# TensorFlow and Keras model checkpoints
+*.ckpt
+checkpoints/
+logs/
+saved_model/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
