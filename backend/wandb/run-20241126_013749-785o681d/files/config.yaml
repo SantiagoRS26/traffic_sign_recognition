@@ -1,0 +1,49 @@
+_wandb:
+    value:
+        cli_version: 0.18.7
+        m: []
+        python_version: 3.9.2rc1
+        t:
+            "1":
+                - 2
+                - 3
+                - 5
+                - 53
+                - 55
+            "2":
+                - 2
+                - 3
+                - 5
+                - 53
+                - 55
+            "3":
+                - 3
+                - 8
+                - 16
+                - 23
+                - 55
+            "4": 3.9.2rc1
+            "5": 0.18.7
+            "8":
+                - 3
+                - 5
+                - 9
+            "10":
+                - 9
+                - 17
+            "12": 0.18.7
+            "13": windows-amd64
+architecture:
+    value: CNN
+batch_size:
+    value: 64
+dataset:
+    value: nombre_de_tu_dataset
+epochs:
+    value: 10
+test_dir:
+    value: data/test_data/test_data
+test_labels_file:
+    value: test_labels.csv
+train_dir:
+    value: data/crop_dataset/crop_dataset

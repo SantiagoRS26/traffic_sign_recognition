@@ -1,0 +1,200 @@
+
+Entrenando fold 1/2 para CNN Modelo 1
+c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\keras\src\layers\convolutional\base_conv.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+Epoch 1/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 11ms/step - accuracy: 0.3194 - loss: 2.6961 - val_accuracy: 0.8671 - val_loss: 0.5587
+Epoch 2/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 10ms/step - accuracy: 0.8748 - loss: 0.5098 - val_accuracy: 0.9374 - val_loss: 0.2720
+Epoch 3/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.9474 - loss: 0.2155 - val_accuracy: 0.9594 - val_loss: 0.1754
+Epoch 4/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.9666 - loss: 0.1458 - val_accuracy: 0.9630 - val_loss: 0.1593
+Epoch 5/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.9781 - loss: 0.0914 - val_accuracy: 0.9731 - val_loss: 0.1220
+Epoch 6/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.9826 - loss: 0.0740 - val_accuracy: 0.9690 - val_loss: 0.1294
+Epoch 7/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.9854 - loss: 0.0600 - val_accuracy: 0.9717 - val_loss: 0.1163
+Epoch 8/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.9877 - loss: 0.0484 - val_accuracy: 0.9824 - val_loss: 0.0952
+Epoch 9/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.9925 - loss: 0.0322 - val_accuracy: 0.9545 - val_loss: 0.1958
+Epoch 10/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.9823 - loss: 0.0664 - val_accuracy: 0.9791 - val_loss: 0.1015
+Exactitud en fold 1: 0.9791
+
+Entrenando fold 2/2 para CNN Modelo 1
+Epoch 1/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 10ms/step - accuracy: 0.3186 - loss: 2.7293 - val_accuracy: 0.8439 - val_loss: 0.6548
+Epoch 2/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.8787 - loss: 0.4837 - val_accuracy: 0.9224 - val_loss: 0.3306
+Epoch 3/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 10ms/step - accuracy: 0.9467 - loss: 0.2244 - val_accuracy: 0.9482 - val_loss: 0.2302
+Epoch 4/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 10ms/step - accuracy: 0.9672 - loss: 0.1426 - val_accuracy: 0.9514 - val_loss: 0.2074
+Epoch 5/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.9695 - loss: 0.1217 - val_accuracy: 0.9586 - val_loss: 0.1811
+Epoch 6/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 10ms/step - accuracy: 0.9766 - loss: 0.0821 - val_accuracy: 0.9600 - val_loss: 0.1892
+Epoch 7/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 10ms/step - accuracy: 0.9816 - loss: 0.0727 - val_accuracy: 0.9741 - val_loss: 0.1344
+Epoch 8/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 10ms/step - accuracy: 0.9867 - loss: 0.0500 - val_accuracy: 0.9622 - val_loss: 0.1691
+Epoch 9/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 10ms/step - accuracy: 0.9883 - loss: 0.0435 - val_accuracy: 0.9640 - val_loss: 0.1662
+Epoch 10/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 9ms/step - accuracy: 0.9885 - loss: 0.0409 - val_accuracy: 0.9757 - val_loss: 0.1328
+Exactitud en fold 2: 0.9757
+
+Exactitud promedio para CNN Modelo 1: 0.9774 +/- 0.0017
+
+Entrenando fold 1/2 para CNN Modelo 2
+Epoch 1/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m6s[0m 23ms/step - accuracy: 0.1614 - loss: 3.1875 - val_accuracy: 0.8162 - val_loss: 0.5645
+Epoch 2/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.8159 - loss: 0.6210 - val_accuracy: 0.9662 - val_loss: 0.1334
+Epoch 3/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.9168 - loss: 0.2854 - val_accuracy: 0.9781 - val_loss: 0.0826
+Epoch 4/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.9411 - loss: 0.1864 - val_accuracy: 0.9835 - val_loss: 0.0635
+Epoch 5/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.9560 - loss: 0.1460 - val_accuracy: 0.9842 - val_loss: 0.0599
+Epoch 6/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.9629 - loss: 0.1170 - val_accuracy: 0.9883 - val_loss: 0.0444
+Epoch 7/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m4s[0m 21ms/step - accuracy: 0.9678 - loss: 0.1075 - val_accuracy: 0.9896 - val_loss: 0.0426
+Epoch 8/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m4s[0m 21ms/step - accuracy: 0.9718 - loss: 0.0890 - val_accuracy: 0.9884 - val_loss: 0.0417
+Epoch 9/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 21ms/step - accuracy: 0.9754 - loss: 0.0826 - val_accuracy: 0.9902 - val_loss: 0.0344
+Epoch 10/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m4s[0m 21ms/step - accuracy: 0.9795 - loss: 0.0737 - val_accuracy: 0.9910 - val_loss: 0.0421
+Exactitud en fold 1: 0.9910
+
+Entrenando fold 2/2 para CNN Modelo 2
+Epoch 1/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m6s[0m 22ms/step - accuracy: 0.2189 - loss: 3.0077 - val_accuracy: 0.8812 - val_loss: 0.4875
+Epoch 2/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.8143 - loss: 0.6188 - val_accuracy: 0.9521 - val_loss: 0.1775
+Epoch 3/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.9136 - loss: 0.3024 - val_accuracy: 0.9757 - val_loss: 0.0955
+Epoch 4/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.9430 - loss: 0.1962 - val_accuracy: 0.9776 - val_loss: 0.0848
+Epoch 5/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.9520 - loss: 0.1486 - val_accuracy: 0.9812 - val_loss: 0.0721
+Epoch 6/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m4s[0m 21ms/step - accuracy: 0.9623 - loss: 0.1224 - val_accuracy: 0.9851 - val_loss: 0.0605
+Epoch 7/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.9693 - loss: 0.0936 - val_accuracy: 0.9857 - val_loss: 0.0610
+Epoch 8/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 22ms/step - accuracy: 0.9725 - loss: 0.0869 - val_accuracy: 0.9883 - val_loss: 0.0504
+Epoch 9/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m4s[0m 21ms/step - accuracy: 0.9747 - loss: 0.0732 - val_accuracy: 0.9875 - val_loss: 0.0501
+Epoch 10/10
+[1m209/209[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 21ms/step - accuracy: 0.9783 - loss: 0.0682 - val_accuracy: 0.9907 - val_loss: 0.0458
+Exactitud en fold 2: 0.9907
+
+Exactitud promedio para CNN Modelo 2: 0.9908 +/- 0.0002
+[34m[1mwandb[0m: [33mWARNING[0m WandbCallback is deprecated and will be removed in a future release. Please use the WandbMetricsLogger, WandbModelCheckpoint, and WandbEvalCallback callbacks instead. See https://docs.wandb.ai/guides/integrations/keras for more information.
+Epoch 1/10
+[1m417/417[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m9s[0m 20ms/step - accuracy: 0.3791 - loss: 2.3502 - val_accuracy: 0.9276 - val_loss: 0.2869
+Epoch 2/10
+[1m417/417[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 19ms/step - accuracy: 0.9282 - loss: 0.2486 - val_accuracy: 0.9481 - val_loss: 0.2152
+Epoch 3/10
+[1m417/417[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 19ms/step - accuracy: 0.9574 - loss: 0.1403 - val_accuracy: 0.9570 - val_loss: 0.1780
+Epoch 4/10
+[1m417/417[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 19ms/step - accuracy: 0.9681 - loss: 0.1006 - val_accuracy: 0.9640 - val_loss: 0.1529
+Epoch 5/10
+[1m417/417[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 19ms/step - accuracy: 0.9737 - loss: 0.0814 - val_accuracy: 0.9597 - val_loss: 0.1731
+Epoch 6/10
+[1m417/417[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 19ms/step - accuracy: 0.9802 - loss: 0.0614 - val_accuracy: 0.9653 - val_loss: 0.1403
+Epoch 7/10
+[1m417/417[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 19ms/step - accuracy: 0.9820 - loss: 0.0592 - val_accuracy: 0.9653 - val_loss: 0.1556
+Epoch 8/10
+[1m417/417[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 19ms/step - accuracy: 0.9846 - loss: 0.0508 - val_accuracy: 0.9624 - val_loss: 0.1551
+Epoch 9/10
+[1m417/417[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 19ms/step - accuracy: 0.9845 - loss: 0.0497 - val_accuracy: 0.9665 - val_loss: 0.1586
+Epoch 10/10
+[1m417/417[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 19ms/step - accuracy: 0.9877 - loss: 0.0377 - val_accuracy: 0.9690 - val_loss: 0.1523
+[31mERROR[0m:    Exception in ASGI application
+Traceback (most recent call last):
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\middleware\errors.py", line 187, in __call__
+    raise exc
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\routing.py", line 74, in app
+    await response(scope, receive, send)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\responses.py", line 158, in __call__
+    await self.background()
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\background.py", line 41, in __call__
+    await task()
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\background.py", line 28, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\starlette\concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\anyio\_backends\_asyncio.py", line 2441, in run_sync_in_worker_thread
+    return await future
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\anyio\_backends\_asyncio.py", line 943, in run
+    result = context.run(func, *args)
+  File "C:\Users\Josehp\Downloads\traffic_sign_recognition-main\traffic_sign_recognition-main\backend\app\utils\training_pipeline.py", line 176, in train_and_evaluate
+    wandb.log({"model": wandb.Artifact('trained_model', type='model')})
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\wandb\sdk\wandb_run.py", line 451, in wrapper
+    return func(self, *args, **kwargs)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\wandb\sdk\wandb_run.py", line 403, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\wandb\sdk\wandb_run.py", line 393, in wrapper
+    return func(self, *args, **kwargs)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\wandb\sdk\wandb_run.py", line 1922, in log
+    self._log(data=data, step=step, commit=commit)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\wandb\sdk\wandb_run.py", line 1641, in _log
+    self._partial_history_callback(data, step, commit)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\wandb\sdk\wandb_run.py", line 1513, in _partial_history_callback
+    self._backend.interface.publish_partial_history(
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\wandb\sdk\interface\interface.py", line 643, in publish_partial_history
+    item.value_json = json_dumps_safer_history(v)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\wandb\util.py", line 841, in json_dumps_safer_history
+    return dumps(obj, cls=WandBHistoryJSONEncoder, **kwargs)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\site-packages\wandb\util.py", line 806, in default
+    return json.JSONEncoder.default(self, obj)
+  File "c:\users\josehp\appdata\local\programs\python\python39\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Artifact is not JSON serializable

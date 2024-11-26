@@ -4,7 +4,6 @@ from fastapi.responses import JSONResponse, FileResponse
 import numpy as np
 from tensorflow.keras.preprocessing import image
 import io
-import csv
 
 router = APIRouter()
 
@@ -62,16 +61,3 @@ async def predict_image(file: UploadFile = File(...)):
     class_label = training_pipeline.class_labels[predicted_class]
 
     return {"predicted_class": int(predicted_class), "class_label": class_label}
-
-@router.get("/dataQuantity")
-async def get_data_quantity():
-    data_quantity = []
-    try:
-        with open('conteo_imagenes.csv', mode='r') as file:
-            csv_reader = csv.reader(file)
-            next(csv_reader)  # Saltar la cabecera
-            for row in csv_reader:
-                data_quantity.append({"class": row[0], "quantity": int(row[1])})
-    except FileNotFoundError:
-        raise HTTPException(status_code=404, detail="El archivo conteo_imagenes.csv no se encontró.")
-    return {"data_quantity": data_quantity}

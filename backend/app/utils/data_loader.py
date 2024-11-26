@@ -4,6 +4,12 @@ import pandas as pd
 from PIL import Image
 from tqdm import tqdm
 
+from PIL import Image
+import os
+import numpy as np
+from tqdm import tqdm
+import pandas as pd
+
 class DataLoader:
     def __init__(self, train_dir, test_dir, test_labels_file, img_size=(32, 32)):
         self.train_dir = train_dir
@@ -22,11 +28,11 @@ class DataLoader:
             for image_file in image_files:
                 image_path = os.path.join(class_dir, image_file)
                 try:
-                    image = Image.open(image_path)
-                    image = image.resize(self.img_size)
-                    image = np.array(image)
-                    X.append(image)
-                    y.append(int(label))
+                    with Image.open(image_path) as image:
+                        image = image.resize(self.img_size)
+                        image = np.array(image)
+                        X.append(image)
+                        y.append(int(label))
                 except Exception as e:
                     print(f'Error al cargar la imagen {image_path}: {e}')
         X = np.array(X)
@@ -42,11 +48,11 @@ class DataLoader:
             label = row['label']
             image_path = os.path.join(self.test_dir, image_file)
             try:
-                image = Image.open(image_path)
-                image = image.resize(self.img_size)
-                image = np.array(image)
-                X_test.append(image)
-                y_test.append(label)
+                with Image.open(image_path) as image:
+                    image = image.resize(self.img_size)
+                    image = np.array(image)
+                    X_test.append(image)
+                    y_test.append(label)
             except Exception as e:
                 print(f'Error al cargar la imagen {image_path}: {e}')
         X_test = np.array(X_test)
